@@ -12,7 +12,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ success: false, message: 'Key or HWID missing' });
   }
 
-  const filePath = path.resolve('./', 'keys.json');
+  const filePath = path.resolve('keys.json');
   const keysData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 
   if (!keysData.hasOwnProperty(key)) {
